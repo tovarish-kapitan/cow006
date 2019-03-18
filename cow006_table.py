@@ -10,24 +10,26 @@ class Row(Container):
         return ' '.join(map(str, self.cards))
         
     def __lt__(self, other):
-        pass
+        return self.top() < other.top()
         
     def top(self):
         """ возвращает последнюю карту в ряду """
-        pass
+        return self.cards[-1]
         
     def overflow(self):
         """ проверяет, есть 6 коров в ряду (True) или еще нет (False)"""
-        pass
-        
+        return len(self.cards) >= 6
+
     def acceptable(self, card):
          """ эту карту card можно положить в конец этого ряда? """
-         pass
+         return card > self.top()
         
     def cut(self):
         """ Убирает из ряда все карты, кроме последней. Возвращает список убранных карт"""
-        pass
-        
+        cutted = []
+        while len(self.cards) > 1:
+            cutted.append(self.cards.pop(0))
+        return cutted
 
 class Table:
     def __init__(self, deck, rows = 4, maxinrow = 6):

@@ -1,4 +1,4 @@
-from cow006_player import Cow006Player
+from cow006_player import Cow006ComputerPlayer
 from cow006_table import Table, Row
 from cow006_deck import Cow006Deck
 
@@ -69,9 +69,9 @@ class Cow006Game:
         
 if __name__ == '__main__':
     g = Cow006Game([
-            Cow006Player("Alice"),
-            Cow006Player("Bob"),
-            Cow006Player("Charle")
+            Cow006ComputerPlayer("Alice"),
+            Cow006ComputerPlayer("Bob"),
+            Cow006ComputerPlayer("Charle")
             ],
             rows=3, maxinrow=4, maxhand=5
             )
